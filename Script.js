@@ -1,7 +1,4 @@
-// Database or local storage key
 const DATABASE_KEY = 'customerSurvey';
-
-// Questions array
 const questions = [
   { id: 1, text: 'How satisfied are you with our products?', type: 'rating' },
   { id: 2, text: 'How fair are the prices compared to similar retailers?', type: 'rating' },
@@ -25,14 +22,11 @@ function showQuestion() {
   document.getElementById('question-counter').textContent = `Question ${currentQuestionIndex + 1}/${questions.length}`;
   document.getElementById('question-text').textContent = currentQuestion.text;
 
-  // Reset UI
   document.getElementById('rating-container').style.display = 'none';
   document.getElementById('recommendation-container').style.display = 'none';
   document.getElementById('text-answer-container').style.display = 'none';
   document.getElementById('previous-btn').disabled = currentQuestionIndex === 0;
   document.getElementById('next-btn').textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next';
-
-  // Show UI based on question type
   if (currentQuestion.type === 'rating') {
     document.getElementById('rating-container').style.display = 'block';
   } else if (currentQuestion.type === 'recommendation') {
@@ -41,7 +35,6 @@ function showQuestion() {
     document.getElementById('text-answer-container').style.display = 'block';
   }
 }
-
 function previousQuestion() {
   currentQuestionIndex--;
   showQuestion();
