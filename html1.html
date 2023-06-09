@@ -5,32 +5,24 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div id="welcome-screen">
-    <h1>Welcome to our shop!</h1>
-    <button onclick="startSurvey()">Start</button>
+  <div class="container">
+    <h1>Welcome to our Shop!</h1>
+    <button id="startBtn">Start Survey</button>
+    <div id="surveyContainer" style="display: none;">
+      <div id="questionNumber"></div>
+      <div id="question"></div>
+      <div id="answerContainer"></div>
+      <div class="button-container">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+        <!-- <button id="skipBtn">Skip</button> -->
+        <button id="submitBtn" style="display: none;">Submit</button>
+      </div>
+    </div>
+    <div id="thankYouContainer" style="display: none;">
+      <h2>Thank you for your time!</h2>
+    </div>
   </div>
-
-  <div id="survey-screen" style="display: none;">
-    <h2 id="question-counter"></h2>
-    <h3 id="question-text"></h3>
-    <div id="rating-container" style="display: none;">
-      <input type="radio" name="rating" value="1">1
-      <input type="radio" name="rating" value="2">2
-      <input type="radio" name="rating" value="3">3
-      <input type="radio" name="rating" value="4">4
-      <input type="radio" name="rating" value="5">5
-    </div>
-    <div id="recommendation-container" style="display: none;">
-      <input type="number" id="recommendation-rating" min="1" max="10">
-    </div>
-    <div id="text-answer-container" style="display: none;">
-      <textarea id="text-answer"></textarea>
-    </div>
-    <button onclick="previousQuestion()" id="previous-btn" disabled>Previous</button>
-    <button onclick="nextQuestion()" id="next-btn">Next</button>
-    <button onclick="skipQuestion()" id="skip-btn">Skip</button>
-  </div>
-
   <script src="script.js"></script>
 </body>
 </html>
